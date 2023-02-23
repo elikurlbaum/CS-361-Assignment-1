@@ -12,10 +12,15 @@ Receive:
 Example Function Call:
 
 async function getImage(workout, image_id){
+    
     console.log("Sending Request")
+    
     const response = await fetch(`http://localhost:5115/{workout`)
+    
     console.log(response)
+    
     document.getElementById(image_id).src = response.url;
+    
 }
 
   ![alt text](https://github.com/elikurlbaum/CS-361-Assignment-1/blob/main/kiran/Microservice%20UML.png)
