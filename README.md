@@ -3,15 +3,19 @@ Eli Kurlbaum
 
 # Communication Contract: Microservice Implemented for Partner
 Request:
-- Write the names of the exercises (exactly how they are written in their corresponding 
-  jpeg files in 'Images') as a string to the text file called pipeline.txt.
-- Separate the names of the exercises with commas (and no spaces).
-- For example: 'Step-up,Lunge,Squat'
+- Send a GET request to `http://localhost:5115/${workout}`.
+- 'workout' should correspond to the routes in the microservice for whichever image.
 
 Receive:
-- Once per second, the microservice reads the text file called pipeline.txt.
-- If the text file contains information, the microservice will act on it.
-- The microservice will then write the paths to the images that correspond to the 
-  exercises written to pipeline.txt, which can then be used by the requester.
+- Response is a JSON object with the image file located in response.url. 
+
+- Example Function Call:
+
+async function getImage(workout, image_id){
+    console.log("Sending Request")
+    const response = await fetch(`http://localhost:5115/{workout`)
+    console.log(response)
+    document.getElementById(image_id).src = response.url;
+}
 
   ![alt text](https://github.com/elikurlbaum/CS-361-Assignment-1/blob/main/kiran/Microservice%20UML.png)
