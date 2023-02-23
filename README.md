@@ -9,7 +9,7 @@ Request:
 Receive:
 - Response is a JSON object with the image file located in response.url. 
 
-- Example Function Call:
+Example Function Call:
 
 async function getImage(workout, image_id){
     console.log("Sending Request")
