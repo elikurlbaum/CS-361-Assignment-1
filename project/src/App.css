@@ -1,11 +1,21 @@
+@font-face {
+  font-family: 'yugioh-title';
+  src: url('/Users/elikurlbaum/Desktop/CS/Classes/CS 361/CS361Files/CS-361-Assignment-1/project/public/fonts/matrixregularsmallcaps.ttf');
+}
+
+@font-face {
+  font-family: 'yugioh-body';
+  src: url('/Users/elikurlbaum/Desktop/CS/Classes/CS 361/CS361Files/CS-361-Assignment-1/project/public/fonts/stoneserifsemibold.ttf');
+}
+
 .App {
   text-align: center;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: 'yugioh-body';
 }
 
 body {
   margin: 0;
-  background-color: hsl(256, 27%, 39%);
+  background-image: linear-gradient(hsl(325, 58%, 41%), hsl(28, 76%, 54%), hsl(161, 67%, 20%));
   color: white;
   font: 100% / normal sans-serif;
 }
@@ -18,18 +28,31 @@ main {
 }
 
 footer {
-  color: white;
+  color: rgba(255, 255, 255, 0.25);
   padding: 1rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-family: 'yugioh-title';
+  font-size: 3.5rem;
   color: white;
 }
 
+p {
+  background-color: rgba(0, 0, 0, 0.205);
+  border-radius: 1rem;
+  border: 4px solid hsl(0, 0%, 0%);
+  padding: 1rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
 .Navigation {
-  background-color: white;
-  font-size: 2rem;
+  font-family: 'yugioh-title';
+  background-color: rgba(0, 0, 0, 0.205);
+  font-size: 3rem;
+  border-radius: 1rem;
+  border: 4px solid hsl(0, 0%, 0%);
   padding: 2rem;
 }
 
@@ -41,20 +64,28 @@ form {
   box-sizing: border-box;
   padding: 2rem;
   border-radius: 1rem;
-  background-color: hsl(0, 0%, 100%);
-  border: 4px solid hsl(0, 0%, 90%);
+  background-color: rgba(0, 0, 0, 0.205);
+  border: 4px solid hsl(0, 0%, 0%);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
 figure{
-  background-color: white;
-  color:hsl(256, 27%, 39%);
+  background-color: rgba(0, 0, 0, 0.205);
+  font-size: 1.25rem;
+  color: white;
+  border-radius: 1rem;
+  border: 4px solid hsl(0, 0%, 0%);
   padding: 1rem;
   margin-top: 2rem;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+figcaption {
+  text-decoration: underline;
+  font-size: 1.5rem;
 }
 
 dt{
@@ -78,12 +109,6 @@ dd{
   color:hsl(39, 76%, 54%);
 }
 
-#description-paragraph{
-  color: hsl(256, 27%, 39%);
-  background-color: white;
-  padding: 2rem;
-}
-
 #logo{
   position: absolute;
   left: 2.5rem;
@@ -103,12 +128,16 @@ dd{
 }
 
 #price{
-  color: hsl(256, 27%, 39%);
+  color: white;
+  font-size: 1.2rem;
   padding: 1rem;
-  background-color: white;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 #submit-button{
+  font-family: 'yugioh-title';
+  font-size: 1.75rem;
   background-color: white;
   border: solid;
   font-weight: bold;
@@ -119,6 +148,8 @@ dd{
 }
 
 #reset-button{
+  font-family: 'yugioh-title';
+  font-size: 1.75rem;
   background-color: white;
   border: solid;
   font-weight: bold;
@@ -128,16 +159,19 @@ dd{
   background-color: hsl(39, 76%, 54%);
 }
 
-
 input{
-  font-size: 1rem;
+  font-family: 'yugioh-title';
+  font-size: 1.75rem;
+  text-align: center;
   background-color: white;
   border: solid;
   -webkit-appearance: none;
 }
 
 select{
-  font-size: 1rem;
+  font-family: 'yugioh-title';
+  font-size: 1.75rem;
+  text-align-last: center;
   background-color: white;
   border: solid;
   -webkit-appearance: none;
@@ -148,7 +182,10 @@ select{
 }
 
 .nav-route{
-  color: hsl(256, 27%, 39%);
+  color: hsl(0, 0%, 100%);
+  padding-left: 5rem;
+  padding-right: 5rem;
+
 }
 
 .nav-route:hover{
@@ -157,7 +194,9 @@ select{
 
 .arrow-icon{
   color: white;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .arrow-icon:hover{

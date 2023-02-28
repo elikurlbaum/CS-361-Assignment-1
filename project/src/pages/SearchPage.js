@@ -7,13 +7,17 @@ export default function SearchPage(){
         <h2>
             Search Page
         </h2>
-        <p>
-            Enter as much information into the form on the left as you want<br></br>
-            for the card you want to search, then press Submit!<br></br>
-            To reset the form, press Reset!<br></br>
-            You can find the cheapest price of the card at the bottom of the page after Submitting!<br></br>
-            Navigate to the About page for more information on the parameters.
-        </p>
+        <figure>
+            <figcaption>Instructions</figcaption>
+            <dl>
+            <dd>Enter information into the form on the left for the card you want to search, then press 'Submit'!</dd>
+            <dd>To reset the form, press 'Reset'!</dd>
+            <dd>To find a random card, press 'Random Card'!</dd>
+            <dd>To create a random deck, press 'Random Deck'!</dd>
+            <dd>You can find the cheapest price of the card at the bottom of the page after submitting!</dd>
+            <dd>Navigate to the About page for more information on the parameters.</dd>
+            </dl>
+        </figure>
         <Search/>
         <div id = "price"></div>
     </>
