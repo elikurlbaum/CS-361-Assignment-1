@@ -19,8 +19,12 @@ function HomePage() {
                 <dl>
                 <dt>Feburary 28, 2023</dt>
                     <dd>Updated the CSS styling of the web applicaiton.</dd>
+                <dt>February 27, 2023</dt>
+                    <dd>Added loading animation for Random Deck Search.</dd>
                 <dt>February 26, 2023</dt>
                     <dd>Finalized multiple card search, and multiple image viewer.</dd>
+                <dt>February 15, 2023</dt>
+                    <dd>Integrated partner's microservice (Random Card and Random Deck).</dd>    
                 <dt>January 27, 2023</dt>
                     <dd>Added CSS styling to the web applicaiton.</dd>
                 <dt>January 26, 2023</dt>

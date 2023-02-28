@@ -213,8 +213,8 @@ export default function Search(){
                 <input type="number" placeholder="Defense" {...register("def")}/>
                 <input id = "submit-button" type="submit"/>
                 <input id = "reset-button" type="reset"/>
-                <input id = "submit-button" type="button" value = "Random Card" onClick={getRandomCard}/>
-                <input id = "submit-button" type="button" value = "Random Deck" onClick={getRandomDeck}/>
+                <input id = "random-card-button" type="button" value = "Random Card" onClick={getRandomCard}/>
+                <input id = "random-deck-button" type="button" value = "Random Deck" onClick={getRandomDeck}/>
             </form>
             <div className="flip-card">
                 <div className="flip-card-inner">
