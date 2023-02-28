@@ -216,7 +216,7 @@ export default function Search(){
                     <img id="Card_Image" src="Yugioh_Card_Back.png" alt="Yugioh Card Back"></img>
                 </div>
                 <div className="flip-card-back">
-                    <img id="Card_Image" src="Yugioh_Card_Back.png" alt="Yugioh Card Back"></img>
+                    <img id="Card_Image_Back" src="Yugioh_Card_Back.png" alt="Yugioh Card Back"></img>
                 </div>
             </div>
         </div>
