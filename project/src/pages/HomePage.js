@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
+/**
+ * Home Page
+ * @returns Website overview, update log.
+ */
 function HomePage() {
- 
     return (
         <>
             <h2>Home Page</h2>
@@ -36,6 +38,5 @@ function HomePage() {
         </>
     );
 }
-
 
 export default HomePage;

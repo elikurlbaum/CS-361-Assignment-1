@@ -1,5 +1,8 @@
+/**
+ * About Page
+ * @returns About figure.
+ */
 function AboutPage() {
- 
     return (
         <>
             <h2>About Page</h2>
@@ -27,6 +30,5 @@ function AboutPage() {
         </>
     );
 }
-
 
 export default AboutPage;

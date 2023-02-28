@@ -286,4 +286,5 @@ select{
   margin-top: -50px;
   margin-left: -50px;
   z-index: 1;
+  opacity: 0.33;
 }

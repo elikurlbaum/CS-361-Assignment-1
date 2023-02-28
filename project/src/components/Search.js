@@ -1,19 +1,20 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill} from 'react-icons/bs'
-import { useState, useEffect } from 'react';
 
 export default function Search(){
     const {register, handleSubmit, reset, setValue} = useForm()
 
+    // Defines variables to be used in functions.
     let data = {}
     let card_number = 0
-    let total_cards = 0
-
     let images = {}
     let image_number = 0
     let total_images = 0
 
+    /**
+     * Resets the form.
+     */
     const onReset = async () => {
         document.getElementById("Card_Image").src="Yugioh_Card_Back.png"
         document.getElementById("image_counter").innerHTML = ""
@@ -32,6 +33,11 @@ export default function Search(){
         })
     }
 
+    /**
+     * Displays the card data.
+     * @param {Object} data - Object containing the card(s) data.
+     * @param {Number} index - Index of the card in data.
+     */
     const displayData = async (data, index) => {
         setValue("name", data['data'][index]['name'])
         setValue("type", data['data'][index]['type'])
@@ -47,6 +53,12 @@ export default function Search(){
         document.getElementById("card_counter").innerHTML = `${index + 1} / ${data['data'].length}`
     }
 
+    /**
+     * Displays the given image of the card.
+     * @param {Object} data - Object containing the card(s) data.
+     * @param {Number} index - Index of the card in the data.
+     * @param {Number} image_index - Index of the image of the card.
+     */
     const displayImage = async (data, index, image_index) => {
         document.getElementById("Card_Image").src=data['data'][index]['card_images'][image_index]['image_url']
         images = data['data'][index]['card_images']
@@ -54,6 +66,9 @@ export default function Search(){
         document.getElementById("image_counter").innerHTML = `${image_index + 1} / ${total_images}`
     }
 
+    /**
+     * Moves to the next card in the card data set.
+     */
     const nextCard = async () => {
         try{
             card_number += 1
@@ -65,6 +80,9 @@ export default function Search(){
         }
     }
 
+    /**
+     * Moves to the previous card in the card data set.
+     */
     const previousCard = async () => {
         try{
             card_number -= 1
@@ -76,6 +94,9 @@ export default function Search(){
         }
     }    
 
+    /**
+     * Moves to the next image in the image data set.
+     */
     const nextImage = async () => {
         try{
             image_number += 1
@@ -86,6 +107,9 @@ export default function Search(){
         }
     }
 
+    /**
+     * Moves to the next image in the image data set.
+     */
     const previousImage = async () => {
         try{
             image_number -= 1
@@ -96,6 +120,10 @@ export default function Search(){
         }
     }
 
+    /**
+     * Submits the values entered into the form to the API, and calls functions to display the data.
+     * @param {Object} formValues - Values entered into the form.
+     */
     const onSubmit = async (formValues) => {
         console.log(formValues)
 
@@ -112,9 +140,7 @@ export default function Search(){
             const response = await fetch(url)
             data = await response.json()
             console.log(data)
-            
             await displayImage(data, 0, 0)
-        
             await displayData(data, 0)
         
         } catch(error){
@@ -125,34 +151,48 @@ export default function Search(){
         }
     }
 
+    /**
+     * Gets a random card (using the microservice).
+     * @param {Object} e - Event
+     */
     const getRandomCard = async (e) => {
         e.preventDefault()
+        
+        // Send request to partner's microservice.
         const response = await fetch('/randomcard', {method: 'GET'})
         data = await response.json()
         console.log(data)
 
+        // Display the data.
         await displayImage(data, 0, 0)
-        
         await displayData(data, 0)
     }
 
+    /**
+     * Gets a random deck (using the microservice)
+     * @param {Object} e - Event 
+     */
     const getRandomDeck = async (e) => {
         e.preventDefault()
 
+        // Display loading icon.
         document.getElementById("loading").src='MnyxU.gif'
         document.getElementById("loading").style='visibility:visible'
 
+        // Send request to partner's microservice.
         const response = await fetch('/randomdeck', {method: 'GET'})
         data = await response.json()
         console.log(data)
-        await displayImage(data, 0, 0)
         
+        // Display the data.
+        await displayImage(data, 0, 0)
         await displayData(data, 0)
 
+        // Hide loading icon.
         document.getElementById("loading").style='visibility:hidden'
     }
     
-    return(
+    return (
         <div>
             <img id='loading' src=''></img>
             <div className='grid-container'>
