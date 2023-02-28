@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'yugioh-title';
-  src: url('/Users/elikurlbaum/Desktop/CS/Classes/CS 361/CS361Files/CS-361-Assignment-1/project/public/fonts/matrixregularsmallcaps.ttf');
+  src: url('/Users/elikurlbaum/Coding/CS-361-Assignment1.2/CS-361-Assignment-1/project/public/fonts/matrixregularsmallcaps.ttf');
 }
 
 @font-face {
   font-family: 'yugioh-body';
-  src: url('/Users/elikurlbaum/Desktop/CS/Classes/CS 361/CS361Files/CS-361-Assignment-1/project/public/fonts/stoneserifsemibold.ttf');
+  src: url('/Users/elikurlbaum/Coding/CS-361-Assignment1.2/CS-361-Assignment-1/project/public/fonts/stoneserifsemibold.ttf');
 }
 
 .App {
