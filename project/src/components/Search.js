@@ -197,9 +197,9 @@ export default function Search(){
             <img id='loading' src=''></img>
             <div className='grid-container'>
             <form onSubmit={handleSubmit(onSubmit)} onReset={onReset}>
-                <input type="text" placeholder="Name" {...register("name")}/>
-                <input type="number" placeholder="Level" {...register("level")}/>
-                <select {...register("type")}>
+                <input title="The exact name of the card." type="text" placeholder="Name" {...register("name")}/>
+                <input title="Filter by card level/RANK (i.e. the number of stars on the card)" type="number" placeholder="Level" {...register("level")}/>
+                <select title="The type of card you want to filter by (Effect Monster, Trap Card, Synchro Monster, etc)." {...register("type")}>
                     <option value="" disabled selected hidden>Type</option>
                     <optgroup label="Main Deck Types">
                         <option value="Effect Monster">Effect Monster</option>
@@ -237,7 +237,7 @@ export default function Search(){
                         <option value="Token">Token</option>
                     </optgroup>
                 </select>
-                <select {...register("attribute")}>
+                <select title="Filter by the card attribute (DARK, FIRE, WIND, etc)." {...register("attribute")}>
                     <option value="" disabled selected hidden>Attribute</option>
                     <option value="DARK">DARK</option>
                     <option value="DIVINE">DIVINE</option>
@@ -247,10 +247,10 @@ export default function Search(){
                     <option value="WATER">WATER</option>
                     <option value="WIND">WIND</option>
                 </select>
-                <input type="text" placeholder="Race" {...register("race")}/>
-                <input type="text" placeholder="Archetype" {...register("archetype")}/>
-                <input type="number" placeholder="Attack" {...register("atk")}/>
-                <input type="number" placeholder="Defense" {...register("def")}/>
+                <input title="Filter by the card race which is officially called type (Spellcaster, Warrior, Insect, etc). This is also used for Spell/Trap cards." type="text" placeholder="Race" {...register("race")}/>
+                <input title="Filter the cards by archetype (Dark Magician, Prank-Kids, Blue-Eyes, etc)." type="text" placeholder="Archetype" {...register("archetype")}/>
+                <input title="Filter by the attack value." type="number" placeholder="Attack" {...register("atk")}/>
+                <input title="Filter by the defense value." type="number" placeholder="Defense" {...register("def")}/>
                 <input id = "submit-button" type="submit"/>
                 <input id = "reset-button" type="reset"/>
                 <input id = "random-card-button" type="button" value = "Random Card" onClick={getRandomCard}/>
